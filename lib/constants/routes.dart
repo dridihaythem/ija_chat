@@ -6,6 +6,7 @@ import 'package:ija_chat/screens/home_screen.dart';
 import 'package:ija_chat/screens/login_screen.dart';
 import 'package:ija_chat/screens/splash_screen.dart';
 import 'package:ija_chat/services/auth_service.dart';
+import 'package:ija_chat/services/database_service.dart';
 import 'package:ija_chat/services/navigation_service.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
@@ -26,6 +27,7 @@ Future<void> _initialization() async {
 
   GetIt.I.registerSingleton<NavigationService>(NavigationService());
   GetIt.I.registerSingleton<AuthService>(AuthService());
+  GetIt.I.registerSingleton<DatabaseService>(DatabaseService());
 }
 
 Future<void> _onInitializationComplete() async {
