@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import 'package:ija_chat/firebase_options.dart';
 import 'package:ija_chat/screens/home_screen.dart';
 import 'package:ija_chat/screens/login_screen.dart';
+import 'package:ija_chat/screens/register_screen.dart';
 import 'package:ija_chat/screens/splash_screen.dart';
 import 'package:ija_chat/services/auth_service.dart';
 import 'package:ija_chat/services/database_service.dart';
@@ -16,6 +17,7 @@ Map<String, Widget Function(BuildContext)> routes = {
       ),
   LoginScreen.routeName: (context) => const LoginScreen(),
   HomeScreen.routeName: (context) => const HomeScreen(),
+  RegisterScreen.routeName: (context) => const RegisterScreen(),
 };
 
 Future<void> _initialization() async {

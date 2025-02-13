@@ -16,4 +16,8 @@ class DatabaseService {
       'last_active': DateTime.now().toUtc(),
     });
   }
+
+  Future<void> createUser(ChatUser user) async {
+    await _db.collection('users').doc(user.uid).set(user.toJson());
+  }
 }

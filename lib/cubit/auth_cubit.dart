@@ -30,4 +30,14 @@ class AuthCubit extends Cubit<AuthState> {
       emit(AuthLoginError("Failed to login"));
     }
   }
+
+  Future<void> register(String name, String email, String password) async {
+    emit(AuthRegisterLoading());
+    try {
+      await GetIt.I.get<AuthService>().register(name, email, password);
+      emit(AuthRegisterSuccess());
+    } catch (e) {
+      emit(AuthRegisterError(e.toString()));
+    }
+  }
 }
